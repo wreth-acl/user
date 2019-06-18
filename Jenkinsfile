@@ -130,7 +130,7 @@ pipeline {
           script {
             def status = executeJMeter ( 
               scriptName: 'jmeter/basiccheck.jmx',
-              resultsDir: "HealthCheck_${env.APP_NAME}_dev_${BUILD_NUMBER}",
+              resultsDir: "HealthCheck_${env.APP_NAME}_dev_${env.VERSION}_${BUILD_NUMBER}",
               serverUrl: "${env.APP_NAME}.dev", 
               serverPort: 80,
               checkPath: '/health',
@@ -159,7 +159,7 @@ pipeline {
           script {
             def status = executeJMeter ( 
               scriptName: "jmeter/${env.APP_NAME}_load.jmx",
-              resultsDir: "FuncCheck_${env.APP_NAME}_dev_${BUILD_NUMBER}", 
+              resultsDir: "FuncCheck_${env.APP_NAME}_dev_${env.VERSION}_${BUILD_NUMBER}", 
               serverUrl: "${env.APP_NAME}.dev", 
               serverPort: 80,
               checkPath: '/health',
