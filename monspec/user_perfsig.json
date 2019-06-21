@@ -1,17 +1,18 @@
 {
+    "spec_version": "2.0",
     "timeseries" : [
         {
             "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
             "aggregation" : "avg",
             "tags" : "app:user,environment:dev",
-            "upperLimit" : 3000.0,
+            "upperSevere": 3000.0,
             "lowerLimit" : 2800.0
         },
         {
             "timeseriesId" : "com.dynatrace.builtin:service.failurerate",
             "aggregation" : "avg",
             "tags" : "app:user,environment:dev",
-            "upperLimit" : 5.0,
+            "upperSevere": 5.0,
             "lowerLimit" : 0.0
         }
     ]
